@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Center - Tic Tac Toe & Memory Game</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-gamepad"></i> Game Center</h1>
+    <p class="subtitle">Choose your favorite game and start playing!</p>
+    
+    <div class="game-buttons">
+      <button class="game-btn active" data-game="tic-tac-toe">
+        <i class="fas fa-times"></i> Tic Tac Toe
+      </button>
+      <button class="game-btn" data-game="memory">
+        <i class="fas fa-brain"></i> Memory Game
+      </button>
+    </div>
+  </header>
+  
+  <div class="game-container">
+    <!-- Tic Tac Toe Game -->
+    <div id="tic-tac-toe" class="tic-tac-toe">
+      <h2 class="game-title">Tic Tac Toe</h2>
+      <div class="status">Player X's turn</div>
+      <div class="board" id="board">
+        <div class="cell" data-cell-index="0"></div>
+        <div class="cell" data-cell-index="1"></div>
+        <div class="cell" data-cell-index="2"></div>
+        <div class="cell" data-cell-index="3"></div>
+        <div class="cell" data-cell-index="4"></div>
+        <div class="cell" data-cell-index="5"></div>
+        <div class="cell" data-cell-index="6"></div>
+        <div class="cell" data-cell-index="7"></div>
+        <div class="cell" data-cell-index="8"></div>
+      </div>
+      <div class="controls">
+        <button class="btn" id="restart-ttt">
+          <i class="fas fa-redo"></i> Restart Game
+        </button>
+      </div>
+    </div>
+    
+    <!-- Memory Game -->
+    <div id="memory" class="memory-game">
+      <h2 class="game-title">Memory Game</h2>
+      <div class="game-info">
+        <div class="info-card">
+          <h3>Moves</h3>
+          <p id="moves">0</p>
+        </div>
+        <div class="info-card">
+          <h3>Time</h3>
+          <p id="timer">0s</p>
+        </div>
+        <div class="info-card">
+          <h3>Matches</h3>
+          <p id="matches">0/8</p>
+        </div>
+      </div>
+      <div class="cards-grid" id="cards-grid">
+      </div>
+      <div class="controls" style="margin-top: 30px;">
+        <button class="btn" id="restart-memory">
+          <i class="fas fa-redo"></i> Restart Game
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="instructions">
+    <h3><i class="fas fa-info-circle"></i> How to Play</h3>
+    <div id="ttt-instructions">
+      <ul>
+        <li>Player <strong>X</strong> always goes first</li>
+        <li>Players take turns placing their mark in empty squares</li>
+        <li>The first player to get 3 of their marks in a row (up, down, across, or diagonally) wins</li>
+        <li>When all 9 squares are full, the game is over (a draw if no winner)</li>
+      </ul>
+    </div>
+    <div id="memory-instructions" style="display: none;">
+      <ul>
+        <li>Flip two cards at a time to find matching pairs</li>
+        <li>If the cards match, they will remain face up</li>
+        <li>If they don't match, they will flip back over</li>
+        <li>Complete the game by matching all pairs in the fewest moves and shortest time</li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer>
+    <p>Game Center | Tic Tac Toe & Memory Game | Built with HTML, CSS & JavaScript</p>
+  </footer>
+  
+  <script src="./index.js"></script>
+</body>
+</html>
